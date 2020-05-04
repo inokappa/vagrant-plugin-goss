@@ -16,7 +16,7 @@ Vagrant.configure('2') do |config|
       './bk/'
     ]
   config.vm.provision :shell, inline: <<~BASH
-    sudo yum install -y httpd
+    sudo yum install -y wget httpd
   BASH
 
   config.vm.provision :goss do |goss|
@@ -24,9 +24,9 @@ Vagrant.configure('2') do |config|
     # root_path からの絶対パスで指定する #{root_path}/foo/bar であれば, /foo/bar と指定
     goss.spec_file = '/spec/goss.yaml'
     # root_path からの絶対パスで指定する #{root_path}/baz であれば, /baz と指定
-    goss.vars_file = '/node.yml'
+    # goss.vars_file = '/vars.yaml'
     # root_path からの絶対パスで指定する #{root_path}/foo/bar であれば, /foo/bar と指定
-    goss.goss_path = '/bin/goss'
+    goss.goss_path = '/goss'
     # goss の output format を指定する, デフォルトは documentation, junit, json, nagios, rspecish, tap, silent
     # goss.output_format = 'junit'
   end

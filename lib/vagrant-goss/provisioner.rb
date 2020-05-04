@@ -11,12 +11,12 @@ module VagrantPlugins
         @root_path = config.root_path
         @output_format = config.output_format
         @spec_file = @root_path + config.spec_file
-        @vars_file = @root_path + config.vars_file
+        @vars_file = @root_path + config.vars_file if config.vars_file != ''
         @goss_path = @root_path + config.goss_path
       end
 
       def provision
-        vars_option = "--vars #{@vars_file} " if @vars_file != ''
+        vars_option = "--vars #{@vars_file} " unless @vars_file.nil?
         run = "#{@goss_path} --gossfile #{@spec_file} " +
               "#{vars_option} " +
               "validate " +
