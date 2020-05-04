@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['inokara@gmail.com']
 
   spec.summary       = %q{A Vagrant plugin that executes goss}
-  spec.description   = 'vagrant-plugin-goss is a Vagrant plugin that integrates serverspec into your workflow.'
+  spec.description   = 'vagrant-plugin-goss is a Vagrant plugin that integrates goss into your workflow.'
   spec.homepage      = 'https://github.com/inokappa/vagrant-plugin-goss'
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
 
