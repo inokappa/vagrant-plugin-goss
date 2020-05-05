@@ -26,8 +26,6 @@ Gem::Specification.new do |spec|
   spec.files          = `git ls-files`.split($/)
   spec.require_paths = ['lib']
 
-  spec.add_runtime_dependency 'specinfra'
-
   spec.add_development_dependency 'bundler', '~> 1.17.3', '>= 1.17'
   spec.add_development_dependency 'rake', '>= 12.3.3'
 end
