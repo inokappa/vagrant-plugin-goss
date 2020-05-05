@@ -29,5 +29,6 @@ Vagrant.configure('2') do |config|
     goss.goss_path = '/goss'
     # goss の output format を指定する, デフォルトは documentation, junit, json, nagios, rspecish, tap, silent
     # goss.output_format = 'junit'
+    goss.sudo = true
   end
 end

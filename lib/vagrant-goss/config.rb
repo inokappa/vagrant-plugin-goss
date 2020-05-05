@@ -6,6 +6,7 @@ module VagrantPlugins
       attr_accessor :vars_file
       attr_accessor :goss_path
       attr_accessor :root_path
+      attr_accessor :sudo
 
       def initialize
         super
@@ -14,6 +15,7 @@ module VagrantPlugins
         @vars_file = UNSET_VALUE
         @goss_path = UNSET_VALUE
         @root_path = UNSET_VALUE
+        @sudo = UNSET_VALUE
       end
 
       def finalize!
@@ -22,6 +24,7 @@ module VagrantPlugins
         @vars_file = '' if @vars_file == UNSET_VALUE
         @goss_path = 'goss' if @goss_path == UNSET_VALUE
         @root_path = '/vagrant' if @goss_path == UNSET_VALUE
+        @sudo = true if @sudo == UNSET_VALUE
       end
     end
   end

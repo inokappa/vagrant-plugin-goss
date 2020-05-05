@@ -13,6 +13,7 @@ module VagrantPlugins
         @spec_file = @root_path + config.spec_file
         @vars_file = @root_path + config.vars_file if config.vars_file != ''
         @goss_path = @root_path + config.goss_path
+        @sudo = config.sudo
       end
 
       def provision
@@ -21,6 +22,7 @@ module VagrantPlugins
               "#{vars_option} " +
               "validate " +
               "--format #{@output_format} --color" 
+        run = 'sudo ' + run if @sudo
         run_command(run) if download_goss(@goss_path)
       end
 
